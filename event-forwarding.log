@@ -1,0 +1,33 @@
+2018-04-03T12:43:20.333-0600	INFO	logger/log.go:24	Zap Logger Started
+2018-04-03T12:43:55.306-0600	INFO	logger/log.go:24	Zap Logger Started
+2018-04-03T12:44:09.911-0600	INFO	logger/log.go:24	Zap Logger Started
+2018-04-03T12:44:09.913-0600	INFO	event-forwarding/server.go:35	Starting workers
+2018-04-03T12:44:09.913-0600	INFO	event-forwarding/server.go:60	Done.
+2018-04-03T12:44:43.430-0600	INFO	logger/log.go:24	Zap Logger Started
+2018-04-03T12:44:43.432-0600	INFO	event-forwarding/server.go:19	Starting workers
+2018-04-03T12:44:43.432-0600	INFO	event-forwarding/server.go:44	Done.
+2018-04-03T12:45:08.749-0600	INFO	logger/log.go:24	Zap Logger Started
+2018-04-03T12:45:08.752-0600	INFO	event-forwarding/server.go:19	Starting workers
+2018-04-03T12:45:08.752-0600	INFO	event-forwarding/server.go:44	Done.
+2018-04-03T12:45:08.752-0600	INFO	event-forwarding/server.go:63	Setting up server...
+2018-04-03T12:45:08.752-0600	INFO	event-forwarding/server.go:76	Starting server...
+2018-04-03T12:45:38.799-0600	INFO	logger/log.go:24	Zap Logger Started
+2018-04-03T12:45:38.802-0600	INFO	event-forwarding/server.go:19	Starting workers
+2018-04-03T12:45:38.802-0600	INFO	event-forwarding/server.go:44	Done.
+2018-04-03T12:45:38.802-0600	INFO	event-forwarding/server.go:63	Setting up server...
+2018-04-03T12:45:38.802-0600	INFO	event-forwarding/server.go:76	Starting server...
+2018-04-03T12:46:17.627-0600	INFO	logger/log.go:24	Zap Logger Started
+2018-04-03T12:46:17.629-0600	INFO	event-forwarding/server.go:19	Starting workers
+2018-04-03T12:46:17.629-0600	INFO	event-forwarding/server.go:44	Done.
+2018-04-03T12:46:17.629-0600	INFO	event-forwarding/server.go:63	Setting up server...
+2018-04-03T12:46:17.629-0600	INFO	event-forwarding/server.go:76	Starting server...
+2018-04-03T12:46:17.629-0600	ERROR	event-forwarding/server.go:78	listen tcp :80: bind: permission denied
+main.main
+	/home/sir/go/src/github.com/byuoitav/event-forwarding/server.go:78
+runtime.main
+	/usr/local/go/src/runtime/proc.go:198
+2018-04-03T12:46:40.761-0600	INFO	logger/log.go:24	Zap Logger Started
+2018-04-03T12:46:40.764-0600	INFO	event-forwarding/server.go:19	Starting workers
+2018-04-03T12:46:40.764-0600	INFO	event-forwarding/server.go:44	Done.
+2018-04-03T12:46:40.764-0600	INFO	event-forwarding/server.go:63	Setting up server...
+2018-04-03T12:46:40.764-0600	INFO	event-forwarding/server.go:76	Starting server...
