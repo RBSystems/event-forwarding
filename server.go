@@ -30,9 +30,9 @@ func init() {
 			b := <-eventForwarding
 			url := ""
 			if len(b.id) < 1 {
-				url = fmt.Sprintf("av-elk-rapidmaster1:9200/events/%v", b.evtype)
+				url = fmt.Sprintf("http://av-elk-rapidmaster1:9200/events/%v", b.evtype)
 			} else {
-				url = fmt.Sprintf("av-elk-rapidmaster1:9200/events/%v/%v", b.evtype, b.id)
+				url = fmt.Sprintf("http://av-elk-rapidmaster1:9200/events/%v/%v", b.evtype, b.id)
 			}
 
 			resp, err := http.Post(url, "appliciation/json", bytes.NewBuffer(b.body))
@@ -95,6 +95,29 @@ func forwardEvent(context echo.Context) error {
 	return context.JSON(http.StatusOK, "")
 }
 
+func baselineUserEvents(context echo.Context) error {
+	defer context.Request().Body.Close()
+	b, err := ioutil.ReadAll(context.Request().Body)
+	if err != nil {
+		logger.L.Warn("Couldn't read body from: %v", context.Request().RemoteAddr)
+		return context.JSON(http.StatusBadRequest, "")
+	}
+
+	info := info{}
+	info.body = b
+	info.evtype = "user"
+
+	logger.L.Debugf("Logging from %v", context.Request().RemoteAddr)
+	eventForwarding <- info
+
+	return context.JSON(http.StatusOK, "")
+}
+
+func justTellMe(context echo.Context) error {
+	logger.L.Infof("url: %v", context.Request().URL)
+	return context.JSON(http.StatusOK, "")
+}
+
 func main() {
 	logger.L.Info("Setting up server...")
 
@@ -103,6 +126,8 @@ func main() {
 	router.GET("/events/:type/:id", forwardEvent)
 	router.PUT("/events/:type/:id", forwardEvent)
 
+	router.POST("/", baselineUserEvents)
+	router.POST("/events", baselineUserEvents)
 	router.POST("/events/:type/:id", forwardEvent)
 	router.POST("/events/:type", forwardUserEvent)
 
