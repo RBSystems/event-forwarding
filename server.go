@@ -41,14 +41,14 @@ func init() {
 			}
 			defer resp.Body.Close()
 
+			reBody, err := ioutil.ReadAll(resp.Body)
+			if err != nil {
+				logger.L.Infof("[forwarder] could not read body: %v", err.Error())
+			}
 			if resp.StatusCode/100 != 2 {
-				logger.L.Infof("[forwarder] Non-200 response recieved: %v.", resp.StatusCode)
-
-				b, err := ioutil.ReadAll(resp.Body)
-				if err != nil {
-					logger.L.Infof("[forwarder] could not read body: %v", err.Error())
-				}
-				logger.L.Infof("[forwarder] response: %s", b)
+				logger.L.Infof("[forwarder] Non-200 response recieved: %v. %v.", resp.StatusCode, reBody)
+			} else {
+				logger.L.Infof("[forwarder] good response: %s", reBody)
 			}
 
 		}()
