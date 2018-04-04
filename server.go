@@ -16,6 +16,7 @@ type info struct {
 	body   []byte
 	id     string
 	evtype string
+	index  string
 }
 
 func init() {
@@ -26,31 +27,32 @@ func init() {
 
 	for i := 0; i < workers; i++ {
 		go func() {
+			for {
 
-			b := <-eventForwarding
-			url := ""
-			if len(b.id) < 1 {
-				url = fmt.Sprintf("http://av-elk-rapidmaster1:9200/events/%v", b.evtype)
-			} else {
-				url = fmt.Sprintf("http://av-elk-rapidmaster1:9200/events/%v/%v", b.evtype, b.id)
-			}
+				b := <-eventForwarding
+				url := ""
+				if len(b.id) < 1 {
+					url = fmt.Sprintf("http://av-elk-rapidmaster1:9200/%v/%v", b.index, b.evtype)
+				} else {
+					url = fmt.Sprintf("http://av-elk-rapidmaster1:9200/%v/%v/%v", b.index, b.evtype, b.id)
+				}
 
-			resp, err := http.Post(url, "appliciation/json", bytes.NewBuffer(b.body))
-			if err != nil {
-				logger.L.Infof("[forwarder] There was a problem sending the event: %v", err.Error())
-			}
-			defer resp.Body.Close()
+				resp, err := http.Post(url, "appliciation/json", bytes.NewBuffer(b.body))
+				if err != nil {
+					logger.L.Infof("[forwarder] There was a problem sending the event: %v", err.Error())
+				}
 
-			reBody, err := ioutil.ReadAll(resp.Body)
-			if err != nil {
-				logger.L.Infof("[forwarder] could not read body: %v", err.Error())
+				reBody, err := ioutil.ReadAll(resp.Body)
+				if err != nil {
+					logger.L.Infof("[forwarder] could not read body: %v", err.Error())
+				}
+				if resp.StatusCode/100 != 2 {
+					logger.L.Infof("[forwarder] Non-200 response recieved: %v. %v.", resp.StatusCode, reBody)
+				} else {
+					logger.L.Infof("[forwarder] good response: %s", reBody)
+				}
+				resp.Body.Close()
 			}
-			if resp.StatusCode/100 != 2 {
-				logger.L.Infof("[forwarder] Non-200 response recieved: %v. %v.", resp.StatusCode, reBody)
-			} else {
-				logger.L.Infof("[forwarder] good response: %s", reBody)
-			}
-
 		}()
 	}
 	logger.L.Info("Done.")
@@ -65,7 +67,7 @@ func forwardUserEvent(context echo.Context) error {
 		return context.JSON(http.StatusBadRequest, "")
 	}
 
-	info := info{}
+	info := info{index: "events"}
 	info.body = b
 	info.evtype = context.Param("type")
 
@@ -84,7 +86,7 @@ func forwardEvent(context echo.Context) error {
 		return context.JSON(http.StatusBadRequest, "")
 	}
 
-	info := info{}
+	info := info{index: "events"}
 	info.body = b
 	info.evtype = context.Param("type")
 	info.id = context.Param("id")
@@ -103,7 +105,7 @@ func baselineUserEvents(context echo.Context) error {
 		return context.JSON(http.StatusBadRequest, "")
 	}
 
-	info := info{}
+	info := info{index: "events"}
 	info.body = b
 	info.evtype = "user"
 
@@ -113,8 +115,24 @@ func baselineUserEvents(context echo.Context) error {
 	return context.JSON(http.StatusOK, "")
 }
 
-func justTellMe(context echo.Context) error {
-	logger.L.Infof("url: %v", context.Request().URL)
+func forwardGenericEvent(context echo.Context) error {
+
+	defer context.Request().Body.Close()
+	b, err := ioutil.ReadAll(context.Request().Body)
+	if err != nil {
+		logger.L.Warn("Couldn't read body from: %v", context.Request().RemoteAddr)
+		return context.JSON(http.StatusBadRequest, "")
+	}
+
+	info := info{
+		index:  context.Param("index"),
+		body:   b,
+		evtype: context.Param("type"),
+	}
+
+	logger.L.Debugf("Logging from %v", context.Request().RemoteAddr)
+	eventForwarding <- info
+
 	return context.JSON(http.StatusOK, "")
 }
 
@@ -130,6 +148,7 @@ func main() {
 	router.POST("/events", baselineUserEvents)
 	router.POST("/events/:type/:id", forwardEvent)
 	router.POST("/events/:type", forwardUserEvent)
+	router.POST("/:index/:type", forwardGenericEvent)
 
 	server := http.Server{
 		Addr:           port,
