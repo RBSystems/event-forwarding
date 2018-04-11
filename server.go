@@ -40,11 +40,13 @@ func init() {
 				resp, err := http.Post(url, "appliciation/json", bytes.NewBuffer(b.body))
 				if err != nil {
 					logger.L.Infof("[forwarder] There was a problem sending the event: %v", err.Error())
+					continue
 				}
 
 				reBody, err := ioutil.ReadAll(resp.Body)
 				if err != nil {
 					logger.L.Infof("[forwarder] could not read body: %v", err.Error())
+					continue
 				}
 				if resp.StatusCode/100 != 2 {
 					logger.L.Infof("[forwarder] Non-200 response recieved: %v. %v.", resp.StatusCode, reBody)
@@ -71,7 +73,7 @@ func forwardUserEvent(context echo.Context) error {
 	info.body = b
 	info.evtype = context.Param("type")
 
-	logger.L.Debugf("Logging from %v", context.Request().RemoteAddr)
+	logger.L.Debugf("Logging user from %v", context.Request().RemoteAddr)
 	eventForwarding <- info
 
 	return context.JSON(http.StatusOK, "")
@@ -91,7 +93,7 @@ func forwardEvent(context echo.Context) error {
 	info.evtype = context.Param("type")
 	info.id = context.Param("id")
 
-	logger.L.Debugf("Logging from %v", context.Request().RemoteAddr)
+	logger.L.Debugf("Logging general from %v", context.Request().RemoteAddr)
 	eventForwarding <- info
 
 	return context.JSON(http.StatusOK, "")
@@ -109,7 +111,7 @@ func baselineUserEvents(context echo.Context) error {
 	info.body = b
 	info.evtype = "user"
 
-	logger.L.Debugf("Logging from %v", context.Request().RemoteAddr)
+	logger.L.Debugf("Logging baseline from %v", context.Request().RemoteAddr)
 	eventForwarding <- info
 
 	return context.JSON(http.StatusOK, "")
@@ -130,7 +132,7 @@ func forwardGenericEvent(context echo.Context) error {
 		evtype: context.Param("type"),
 	}
 
-	logger.L.Debugf("Logging from %v", context.Request().RemoteAddr)
+	logger.L.Debugf("Logging generic from %v", context.Request().RemoteAddr)
 	eventForwarding <- info
 
 	return context.JSON(http.StatusOK, "")
