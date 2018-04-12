@@ -8,15 +8,17 @@ import (
 
 	"github.com/byuoitav/event-forwarding/logger"
 	"github.com/labstack/echo"
+	"github.com/labstack/echo/middleware"
 )
 
 var eventForwarding chan info
 
 type info struct {
-	body   []byte
-	id     string
-	evtype string
-	index  string
+	body     []byte
+	id       string
+	evtype   string
+	index    string
+	endpoint string
 }
 
 func init() {
@@ -30,11 +32,19 @@ func init() {
 			for {
 
 				b := <-eventForwarding
+
+				logger.L.Debugf("event: %s", b.body)
+
 				url := ""
-				if len(b.id) < 1 {
+				if len(b.id) < 1 && len(b.index) > 0 {
 					url = fmt.Sprintf("http://av-elk-rapidmaster1:9200/%v/%v", b.index, b.evtype)
-				} else {
+				} else if len(b.id) > 0 {
 					url = fmt.Sprintf("http://av-elk-rapidmaster1:9200/%v/%v/%v", b.index, b.evtype, b.id)
+				} else if len(b.endpoint) > 0 {
+					url = fmt.Sprintf("http://av-elk-rapidmaster1:9200%v", b.endpoint)
+				} else {
+					logger.L.Infof("No endpoint information, discarding...")
+					continue
 				}
 
 				resp, err := http.Post(url, "appliciation/json", bytes.NewBuffer(b.body))
@@ -49,7 +59,7 @@ func init() {
 					continue
 				}
 				if resp.StatusCode/100 != 2 {
-					logger.L.Infof("[forwarder] Non-200 response recieved: %v. %v.", resp.StatusCode, reBody)
+					logger.L.Infof("[forwarder] Non-200 response recieved: %v. %s.", resp.StatusCode, reBody)
 				} else {
 					logger.L.Infof("[forwarder] good response: %s", reBody)
 				}
@@ -126,14 +136,24 @@ func forwardGenericEvent(context echo.Context) error {
 		return context.JSON(http.StatusBadRequest, "")
 	}
 
-	info := info{
-		index:  context.Param("index"),
-		body:   b,
-		evtype: context.Param("type"),
+	var i info
+
+	if len(context.Param("index")) > 0 {
+		logger.L.Debugf("Logging generic from %v", context.Request().RemoteAddr)
+		i = info{
+			index:  context.Param("index"),
+			body:   b,
+			evtype: context.Param("type"),
+		}
+	} else {
+		logger.L.Debugf("Logging root match %v from %v.", context.Request().URL.Path, context.Request().RemoteAddr)
+		i = info{
+			body:     b,
+			endpoint: context.Request().URL.Path,
+		}
 	}
 
-	logger.L.Debugf("Logging generic from %v", context.Request().RemoteAddr)
-	eventForwarding <- info
+	eventForwarding <- i
 
 	return context.JSON(http.StatusOK, "")
 }
@@ -142,7 +162,10 @@ func main() {
 	logger.L.Info("Setting up server...")
 
 	port := ":80"
+
 	router := echo.New()
+	router.Pre(middleware.RemoveTrailingSlash())
+
 	router.GET("/events/:type/:id", forwardEvent)
 	router.PUT("/events/:type/:id", forwardEvent)
 
@@ -150,7 +173,12 @@ func main() {
 	router.POST("/events", baselineUserEvents)
 	router.POST("/events/:type/:id", forwardEvent)
 	router.POST("/events/:type", forwardUserEvent)
+
 	router.POST("/:index/:type", forwardGenericEvent)
+
+	router.POST("/user/*", forwardGenericEvent)
+	router.POST("/events/*", forwardGenericEvent)
+	router.POST("/*", forwardGenericEvent)
 
 	server := http.Server{
 		Addr:           port,
@@ -158,6 +186,8 @@ func main() {
 	}
 
 	logger.L.Info("Starting server...")
+
 	err := router.StartServer(&server)
+
 	logger.L.Errorf("%v", err.Error())
 }
