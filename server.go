@@ -2,10 +2,12 @@ package main
 
 import (
 	"bytes"
+	"encoding/json"
 	"fmt"
 	"io/ioutil"
 	"net/http"
 
+	"github.com/byuoitav/event-forwarding/helpers"
 	"github.com/byuoitav/event-forwarding/logger"
 	"github.com/labstack/echo"
 	"github.com/labstack/echo/middleware"
@@ -32,8 +34,28 @@ func init() {
 			for {
 
 				b := <-eventForwarding
+				var e helpers.CrestronEvent
 
-				logger.L.Debugf("event: %s", b.body)
+				//logger.L.Debugf("event: %s", b.body)
+				logger.L.Debugf("Parsing event")
+				err := json.Unmarshal(b.body, &e)
+				if err == nil {
+
+					logger.L.Debugf("success, converting timestamp")
+					newe := helpers.ConvertTimestamp(e)
+
+					logger.L.Debugf("New timestamp, %v", newe.NewTimestamp)
+					temp, err := json.Marshal(newe)
+					if err != nil {
+						continue
+					}
+
+					b.body = temp
+					logger.L.Debug("Done. Continuing forwarding.")
+				} else {
+					logger.L.Debugf("error: %v", err.Error())
+
+				}
 
 				url := ""
 				if len(b.id) < 1 && len(b.index) > 0 {
@@ -71,7 +93,6 @@ func init() {
 }
 
 func forwardUserEvent(context echo.Context) error {
-
 	defer context.Request().Body.Close()
 	b, err := ioutil.ReadAll(context.Request().Body)
 	if err != nil {

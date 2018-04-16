@@ -13,7 +13,6 @@ var cfg zap.Config
 func init() {
 
 	cfg = zap.NewDevelopmentConfig()
-	cfg.OutputPaths = append(cfg.OutputPaths, "./event-forwarding.log")
 	cfg.EncoderConfig.EncodeTime = zapcore.ISO8601TimeEncoder
 	l, err := cfg.Build()
 	if err != nil {

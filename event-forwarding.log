@@ -1,0 +1,247 @@
+2018-04-12T10:02:56.278-0400	INFO	logger/log.go:24	Zap Logger Started
+2018-04-12T10:02:56.286-0400	INFO	event-forwarding/server.go:27	Starting workers
+2018-04-12T10:02:56.286-0400	INFO	event-forwarding/server.go:66	Done.
+2018-04-12T10:02:56.286-0400	INFO	event-forwarding/server.go:158	Setting up server...
+2018-04-12T10:02:56.286-0400	INFO	event-forwarding/server.go:177	Starting server...
+2018-04-12T10:02:56.286-0400	ERROR	event-forwarding/server.go:179	listen tcp :80: bind: permission denied
+main.main
+	/home/sir/go/src/github.com/byuoitav/event-forwarding/server.go:179
+runtime.main
+	/usr/local/go/src/runtime/proc.go:198
+2018-04-12T10:03:11.363-0400	INFO	logger/log.go:24	Zap Logger Started
+2018-04-12T10:03:11.385-0400	INFO	event-forwarding/server.go:27	Starting workers
+2018-04-12T10:03:11.385-0400	INFO	event-forwarding/server.go:66	Done.
+2018-04-12T10:03:11.385-0400	INFO	event-forwarding/server.go:158	Setting up server...
+2018-04-12T10:03:11.386-0400	INFO	event-forwarding/server.go:177	Starting server...
+2018-04-12T10:04:51.274-0400	INFO	logger/log.go:24	Zap Logger Started
+2018-04-12T10:04:51.293-0400	INFO	event-forwarding/server.go:27	Starting workers
+2018-04-12T10:04:51.293-0400	INFO	event-forwarding/server.go:66	Done.
+2018-04-12T10:04:51.294-0400	INFO	event-forwarding/server.go:158	Setting up server...
+2018-04-12T10:04:51.294-0400	INFO	event-forwarding/server.go:178	Starting server...
+2018-04-12T10:06:16.125-0400	INFO	logger/log.go:24	Zap Logger Started
+2018-04-12T10:06:16.147-0400	INFO	event-forwarding/server.go:27	Starting workers
+2018-04-12T10:06:16.147-0400	INFO	event-forwarding/server.go:66	Done.
+2018-04-12T10:06:16.147-0400	INFO	event-forwarding/server.go:158	Setting up server...
+2018-04-12T10:06:16.147-0400	INFO	event-forwarding/server.go:178	Starting server...
+2018-04-12T10:06:34.852-0400	DEBUG	event-forwarding/server.go:120	Logging baseline from [::1]:54078
+2018-04-12T10:06:35.108-0400	INFO	event-forwarding/server.go:58	[forwarder] Non-200 response recieved: 400. [123 34 101 114 114 111 114 34 58 123 34 114 111 111 116 95 99 97 117 115 101 34 58 91 123 34 116 121 112 101 34 58 34 112 97 114 115 101 95 101 120 99 101 112 116 105 111 110 34 44 34 114 101 97 115 111 110 34 58 34 114 101 113 117 101 115 116 32 98 111 100 121 32 105 115 32 114 101 113 117 105 114 101 100 34 125 93 44 34 116 121 112 101 34 58 34 112 97 114 115 101 95 101 120 99 101 112 116 105 111 110 34 44 34 114 101 97 115 111 110 34 58 34 114 101 113 117 101 115 116 32 98 111 100 121 32 105 115 32 114 101 113 117 105 114 101 100 34 125 44 34 115 116 97 116 117 115 34 58 52 48 48 125].
+2018-04-12T10:07:13.378-0400	INFO	logger/log.go:24	Zap Logger Started
+2018-04-12T10:07:13.398-0400	INFO	event-forwarding/server.go:27	Starting workers
+2018-04-12T10:07:13.399-0400	INFO	event-forwarding/server.go:66	Done.
+2018-04-12T10:07:13.399-0400	INFO	event-forwarding/server.go:158	Setting up server...
+2018-04-12T10:07:13.399-0400	INFO	event-forwarding/server.go:178	Starting server...
+2018-04-12T10:07:15.648-0400	DEBUG	event-forwarding/server.go:120	Logging baseline from [::1]:54542
+2018-04-12T10:07:15.893-0400	INFO	event-forwarding/server.go:58	[forwarder] Non-200 response recieved: 400. {"error":{"root_cause":[{"type":"parse_exception","reason":"request body is required"}],"type":"parse_exception","reason":"request body is required"},"status":400}.
+2018-04-12T10:12:55.158-0400	INFO	logger/log.go:24	Zap Logger Started
+2018-04-12T10:12:55.165-0400	INFO	event-forwarding/server.go:27	Starting workers
+2018-04-12T10:12:55.165-0400	INFO	event-forwarding/server.go:66	Done.
+2018-04-12T10:12:55.165-0400	INFO	event-forwarding/server.go:158	Setting up server...
+2018-04-12T10:12:55.165-0400	INFO	event-forwarding/server.go:182	Starting server...
+2018-04-12T10:12:59.213-0400	DEBUG	event-forwarding/server.go:145	Logging root match 0x690d20 from [::1]:57374.
+2018-04-12T10:12:59.460-0400	INFO	event-forwarding/server.go:58	[forwarder] Non-200 response recieved: 400. {"error":{"root_cause":[{"type":"parse_exception","reason":"request body is required"}],"type":"parse_exception","reason":"request body is required"},"status":400}.
+2018-04-12T10:13:02.563-0400	DEBUG	event-forwarding/server.go:145	Logging root match 0x690d20 from [::1]:57374.
+2018-04-12T10:13:02.646-0400	INFO	event-forwarding/server.go:58	[forwarder] Non-200 response recieved: 400. {"error":{"root_cause":[{"type":"parse_exception","reason":"request body is required"}],"type":"parse_exception","reason":"request body is required"},"status":400}.
+2018-04-12T10:13:04.598-0400	DEBUG	event-forwarding/server.go:145	Logging root match 0x690d20 from [::1]:57374.
+2018-04-12T10:13:04.679-0400	INFO	event-forwarding/server.go:58	[forwarder] Non-200 response recieved: 400. {"error":{"root_cause":[{"type":"parse_exception","reason":"request body is required"}],"type":"parse_exception","reason":"request body is required"},"status":400}.
+2018-04-12T10:13:34.928-0400	INFO	logger/log.go:24	Zap Logger Started
+2018-04-12T10:13:34.935-0400	INFO	event-forwarding/server.go:27	Starting workers
+2018-04-12T10:13:34.935-0400	INFO	event-forwarding/server.go:66	Done.
+2018-04-12T10:13:34.935-0400	INFO	event-forwarding/server.go:158	Setting up server...
+2018-04-12T10:13:34.935-0400	INFO	event-forwarding/server.go:183	Starting server...
+2018-04-12T10:13:34.935-0400	ERROR	event-forwarding/server.go:187	listen tcp :80: bind: permission denied
+main.main
+	/home/sir/go/src/github.com/byuoitav/event-forwarding/server.go:187
+runtime.main
+	/usr/local/go/src/runtime/proc.go:198
+2018-04-12T10:13:40.678-0400	INFO	logger/log.go:24	Zap Logger Started
+2018-04-12T10:13:40.685-0400	INFO	event-forwarding/server.go:27	Starting workers
+2018-04-12T10:13:40.685-0400	INFO	event-forwarding/server.go:66	Done.
+2018-04-12T10:13:40.685-0400	INFO	event-forwarding/server.go:158	Setting up server...
+2018-04-12T10:13:40.686-0400	INFO	event-forwarding/server.go:183	Starting server...
+2018-04-12T10:13:47.591-0400	DEBUG	event-forwarding/server.go:145	Logging root match /users/* from [::1]:57744.
+2018-04-12T10:13:47.835-0400	INFO	event-forwarding/server.go:58	[forwarder] Non-200 response recieved: 400. {"error":{"root_cause":[{"type":"parse_exception","reason":"request body is required"}],"type":"parse_exception","reason":"request body is required"},"status":400}.
+2018-04-12T10:14:33.538-0400	INFO	logger/log.go:24	Zap Logger Started
+2018-04-12T10:14:33.545-0400	INFO	event-forwarding/server.go:27	Starting workers
+2018-04-12T10:14:33.545-0400	INFO	event-forwarding/server.go:66	Done.
+2018-04-12T10:14:33.545-0400	INFO	event-forwarding/server.go:158	Setting up server...
+2018-04-12T10:14:33.545-0400	INFO	event-forwarding/server.go:183	Starting server...
+2018-04-12T10:14:35.188-0400	DEBUG	event-forwarding/server.go:145	Logging root match /users/ad from [::1]:58176.
+2018-04-12T10:14:35.434-0400	INFO	event-forwarding/server.go:58	[forwarder] Non-200 response recieved: 400. {"error":{"root_cause":[{"type":"parse_exception","reason":"request body is required"}],"type":"parse_exception","reason":"request body is required"},"status":400}.
+2018-04-12T10:14:59.910-0400	INFO	logger/log.go:24	Zap Logger Started
+2018-04-12T10:14:59.917-0400	INFO	event-forwarding/server.go:27	Starting workers
+2018-04-12T10:14:59.917-0400	INFO	event-forwarding/server.go:66	Done.
+2018-04-12T10:14:59.917-0400	INFO	event-forwarding/server.go:158	Setting up server...
+2018-04-12T10:14:59.917-0400	INFO	event-forwarding/server.go:183	Starting server...
+2018-04-12T10:15:02.211-0400	DEBUG	event-forwarding/server.go:145	Logging root match /users/ad from [::1]:58398.
+2018-04-12T10:15:02.456-0400	INFO	event-forwarding/server.go:58	[forwarder] Non-200 response recieved: 400. {"error":{"root_cause":[{"type":"parse_exception","reason":"request body is required"}],"type":"parse_exception","reason":"request body is required"},"status":400}.
+2018-04-12T10:20:22.036-0400	INFO	logger/log.go:24	Zap Logger Started
+2018-04-12T10:20:22.043-0400	INFO	event-forwarding/server.go:27	Starting workers
+2018-04-12T10:20:22.043-0400	INFO	event-forwarding/server.go:66	Done.
+2018-04-12T10:20:22.043-0400	INFO	event-forwarding/server.go:158	Setting up server...
+2018-04-12T10:20:22.043-0400	INFO	event-forwarding/server.go:185	Starting server...
+2018-04-12T10:20:25.993-0400	DEBUG	event-forwarding/server.go:138	Logging generic from [::1]:32788
+2018-04-12T10:20:26.285-0400	INFO	event-forwarding/server.go:58	[forwarder] Non-200 response recieved: 400. {"error":{"root_cause":[{"type":"parse_exception","reason":"request body is required"}],"type":"parse_exception","reason":"request body is required"},"status":400}.
+2018-04-12T10:28:15.353-0400	INFO	logger/log.go:24	Zap Logger Started
+2018-04-12T10:28:15.375-0400	INFO	event-forwarding/server.go:27	Starting workers
+2018-04-12T10:28:15.375-0400	INFO	event-forwarding/server.go:66	Done.
+2018-04-12T10:28:15.375-0400	INFO	event-forwarding/server.go:158	Setting up server...
+2018-04-12T10:28:15.376-0400	INFO	event-forwarding/server.go:182	Starting server...
+2018-04-12T10:28:15.376-0400	ERROR	event-forwarding/server.go:186	listen tcp :80: bind: address already in use
+main.main
+	/home/sir/go/src/github.com/byuoitav/event-forwarding/server.go:186
+runtime.main
+	/usr/local/go/src/runtime/proc.go:198
+2018-04-12T10:28:20.436-0400	INFO	logger/log.go:24	Zap Logger Started
+2018-04-12T10:28:20.443-0400	INFO	event-forwarding/server.go:27	Starting workers
+2018-04-12T10:28:20.443-0400	INFO	event-forwarding/server.go:66	Done.
+2018-04-12T10:28:20.444-0400	INFO	event-forwarding/server.go:158	Setting up server...
+2018-04-12T10:28:20.444-0400	INFO	event-forwarding/server.go:182	Starting server...
+2018-04-12T10:28:32.722-0400	INFO	logger/log.go:24	Zap Logger Started
+2018-04-12T10:28:32.729-0400	INFO	event-forwarding/server.go:27	Starting workers
+2018-04-12T10:28:32.729-0400	INFO	event-forwarding/server.go:66	Done.
+2018-04-12T10:28:32.729-0400	INFO	event-forwarding/server.go:158	Setting up server...
+2018-04-12T10:28:32.729-0400	INFO	event-forwarding/server.go:182	Starting server...
+2018-04-12T10:28:32.730-0400	ERROR	event-forwarding/server.go:186	listen tcp :80: bind: permission denied
+main.main
+	/home/sir/go/src/github.com/byuoitav/event-forwarding/server.go:186
+runtime.main
+	/usr/local/go/src/runtime/proc.go:198
+2018-04-12T10:28:57.620-0400	INFO	logger/log.go:24	Zap Logger Started
+2018-04-12T10:28:57.628-0400	INFO	event-forwarding/server.go:27	Starting workers
+2018-04-12T10:28:57.628-0400	INFO	event-forwarding/server.go:66	Done.
+2018-04-12T10:28:57.628-0400	INFO	event-forwarding/server.go:158	Setting up server...
+2018-04-12T10:28:57.628-0400	INFO	event-forwarding/server.go:183	Starting server...
+2018-04-12T10:29:00.490-0400	DEBUG	event-forwarding/server.go:145	Logging root match /usef/aa/adfa/adfafd from [::1]:37392.
+2018-04-12T10:29:00.742-0400	INFO	event-forwarding/server.go:58	[forwarder] Non-200 response recieved: 400. No handler found for uri [/usef/aa/adfa/adfafd] and method [POST].
+2018-04-12T10:36:39.291-0400	INFO	logger/log.go:24	Zap Logger Started
+2018-04-12T10:36:39.298-0400	INFO	event-forwarding/server.go:27	Starting workers
+2018-04-12T10:36:39.299-0400	INFO	event-forwarding/server.go:69	Done.
+2018-04-12T10:36:39.299-0400	INFO	event-forwarding/server.go:161	Setting up server...
+2018-04-12T10:36:39.299-0400	INFO	event-forwarding/server.go:186	Starting server...
+2018-04-12T10:40:26.626-0400	INFO	logger/log.go:24	Zap Logger Started
+2018-04-12T10:40:26.633-0400	INFO	event-forwarding/server.go:27	Starting workers
+2018-04-12T10:40:26.633-0400	INFO	event-forwarding/server.go:69	Done.
+2018-04-12T10:40:26.633-0400	INFO	event-forwarding/server.go:161	Setting up server...
+2018-04-12T10:40:26.633-0400	INFO	event-forwarding/server.go:186	Starting server...
+2018-04-12T10:40:28.533-0400	DEBUG	event-forwarding/server.go:148	Logging root match /usef/aa/adfa/adfafd from [::1]:42996.
+2018-04-12T10:40:28.533-0400	DEBUG	event-forwarding/server.go:35	event: 
+2018-04-12T10:40:28.781-0400	INFO	event-forwarding/server.go:61	[forwarder] Non-200 response recieved: 400. No handler found for uri [/usef/aa/adfa/adfafd] and method [POST].
+2018-04-12T10:41:17.747-0400	DEBUG	event-forwarding/server.go:148	Logging root match /aadfa/adf/we/ewr/asdf from [::1]:42996.
+2018-04-12T10:41:17.747-0400	DEBUG	event-forwarding/server.go:35	event: 
+2018-04-12T10:41:17.830-0400	INFO	event-forwarding/server.go:61	[forwarder] Non-200 response recieved: 400. No handler found for uri [/aadfa/adf/we/ewr/asdf] and method [POST].
+2018-04-12T10:47:27.262-0400	DEBUG	event-forwarding/server.go:148	Logging root match /user/ from [::1]:42996.
+2018-04-12T10:47:27.262-0400	DEBUG	event-forwarding/server.go:35	event: 
+2018-04-12T10:47:27.508-0400	INFO	event-forwarding/server.go:61	[forwarder] Non-200 response recieved: 400. No handler found for uri [/user/] and method [POST].
+2018-04-12T10:47:38.412-0400	DEBUG	event-forwarding/server.go:148	Logging root match /a/dd/d from [::1]:42996.
+2018-04-12T10:47:38.412-0400	DEBUG	event-forwarding/server.go:35	event: 
+2018-04-12T10:47:38.495-0400	INFO	event-forwarding/server.go:61	[forwarder] Non-200 response recieved: 400. {"error":{"root_cause":[{"type":"parse_exception","reason":"request body is required"}],"type":"parse_exception","reason":"request body is required"},"status":400}.
+2018-04-12T10:47:39.818-0400	DEBUG	event-forwarding/server.go:141	Logging generic from [::1]:42996
+2018-04-12T10:47:39.818-0400	DEBUG	event-forwarding/server.go:35	event: 
+2018-04-12T10:47:39.901-0400	INFO	event-forwarding/server.go:61	[forwarder] Non-200 response recieved: 400. {"error":{"root_cause":[{"type":"parse_exception","reason":"request body is required"}],"type":"parse_exception","reason":"request body is required"},"status":400}.
+2018-04-12T10:49:31.659-0400	DEBUG	event-forwarding/server.go:123	Logging baseline from [::1]:42996
+2018-04-12T10:49:31.659-0400	DEBUG	event-forwarding/server.go:35	event: 
+2018-04-12T10:49:31.902-0400	INFO	event-forwarding/server.go:61	[forwarder] Non-200 response recieved: 400. {"error":{"root_cause":[{"type":"parse_exception","reason":"request body is required"}],"type":"parse_exception","reason":"request body is required"},"status":400}.
+2018-04-12T10:49:33.134-0400	DEBUG	event-forwarding/server.go:123	Logging baseline from [::1]:42996
+2018-04-12T10:49:33.134-0400	DEBUG	event-forwarding/server.go:35	event: 
+2018-04-12T10:49:33.216-0400	INFO	event-forwarding/server.go:61	[forwarder] Non-200 response recieved: 400. {"error":{"root_cause":[{"type":"parse_exception","reason":"request body is required"}],"type":"parse_exception","reason":"request body is required"},"status":400}.
+2018-04-12T10:52:16.804-0400	DEBUG	event-forwarding/server.go:123	Logging baseline from [::1]:42996
+2018-04-12T10:52:16.804-0400	DEBUG	event-forwarding/server.go:35	event: 
+2018-04-12T10:52:17.049-0400	INFO	event-forwarding/server.go:61	[forwarder] Non-200 response recieved: 400. {"error":{"root_cause":[{"type":"parse_exception","reason":"request body is required"}],"type":"parse_exception","reason":"request body is required"},"status":400}.
+2018-04-12T10:52:18.983-0400	DEBUG	event-forwarding/server.go:123	Logging baseline from [::1]:42996
+2018-04-12T10:52:18.983-0400	DEBUG	event-forwarding/server.go:35	event: 
+2018-04-12T10:52:19.064-0400	INFO	event-forwarding/server.go:61	[forwarder] Non-200 response recieved: 400. {"error":{"root_cause":[{"type":"parse_exception","reason":"request body is required"}],"type":"parse_exception","reason":"request body is required"},"status":400}.
+2018-04-12T11:20:58.928-0400	INFO	logger/log.go:24	Zap Logger Started
+2018-04-12T11:20:58.949-0400	INFO	event-forwarding/server.go:27	Starting workers
+2018-04-12T11:20:58.950-0400	INFO	event-forwarding/server.go:69	Done.
+2018-04-12T11:20:58.950-0400	INFO	event-forwarding/server.go:161	Setting up server...
+2018-04-12T11:20:58.950-0400	INFO	event-forwarding/server.go:187	Starting server...
+2018-04-12T13:06:03.780-0400	INFO	logger/log.go:24	Zap Logger Started
+2018-04-12T13:06:03.803-0400	INFO	event-forwarding/server.go:30	Starting workers
+2018-04-12T13:06:03.803-0400	INFO	event-forwarding/server.go:89	Done.
+2018-04-12T13:06:03.803-0400	INFO	event-forwarding/server.go:180	Setting up server...
+2018-04-12T13:06:03.803-0400	INFO	event-forwarding/server.go:206	Starting server...
+2018-04-12T13:06:03.803-0400	ERROR	event-forwarding/server.go:210	listen tcp :80: bind: permission denied
+main.main
+	/home/sir/go/src/github.com/byuoitav/event-forwarding/server.go:210
+runtime.main
+	/usr/local/go/src/runtime/proc.go:198
+2018-04-12T13:06:10.574-0400	INFO	logger/log.go:24	Zap Logger Started
+2018-04-12T13:06:10.597-0400	INFO	event-forwarding/server.go:30	Starting workers
+2018-04-12T13:06:10.598-0400	INFO	event-forwarding/server.go:89	Done.
+2018-04-12T13:06:10.598-0400	INFO	event-forwarding/server.go:180	Setting up server...
+2018-04-12T13:06:10.598-0400	INFO	event-forwarding/server.go:206	Starting server...
+2018-04-12T13:07:20.208-0400	DEBUG	event-forwarding/server.go:142	Logging baseline from [::1]:57952
+2018-04-12T13:07:20.208-0400	DEBUG	event-forwarding/server.go:40	Parsing event
+2018-04-12T13:07:20.461-0400	INFO	event-forwarding/server.go:81	[forwarder] Non-200 response recieved: 406. {"error":"Content-Type header [appliciation/json] is not supported","status":406}.
+2018-04-12T13:07:59.285-0400	INFO	logger/log.go:24	Zap Logger Started
+2018-04-12T13:07:59.292-0400	INFO	event-forwarding/server.go:30	Starting workers
+2018-04-12T13:07:59.309-0400	INFO	event-forwarding/server.go:92	Done.
+2018-04-12T13:07:59.309-0400	INFO	event-forwarding/server.go:183	Setting up server...
+2018-04-12T13:07:59.309-0400	INFO	event-forwarding/server.go:209	Starting server...
+2018-04-12T13:08:05.061-0400	DEBUG	event-forwarding/server.go:145	Logging baseline from [::1]:58364
+2018-04-12T13:08:05.061-0400	DEBUG	event-forwarding/server.go:40	Parsing event
+2018-04-12T13:08:05.061-0400	DEBUG	event-forwarding/server.go:56	error: invalid character '\x01' looking for beginning of value
+2018-04-12T13:08:05.324-0400	INFO	event-forwarding/server.go:84	[forwarder] Non-200 response recieved: 406. {"error":"Content-Type header [appliciation/json] is not supported","status":406}.
+2018-04-12T13:08:14.555-0400	DEBUG	event-forwarding/server.go:145	Logging baseline from [::1]:58364
+2018-04-12T13:08:14.555-0400	DEBUG	event-forwarding/server.go:40	Parsing event
+2018-04-12T13:08:14.555-0400	DEBUG	event-forwarding/server.go:44	success, converting timestamp
+2018-04-12T13:08:14.555-0400	DEBUG	event-forwarding/server.go:47	New timestamp, %v
+2018-04-12T13:08:14.555-0400	DEBUG	event-forwarding/server.go:54	Done. Continuing forwarding.
+2018-04-12T13:08:14.650-0400	INFO	event-forwarding/server.go:84	[forwarder] Non-200 response recieved: 400. {"error":{"root_cause":[{"type":"mapper_parsing_exception","reason":"failed to parse [@timestamp]"}],"type":"mapper_parsing_exception","reason":"failed to parse [@timestamp]","caused_by":{"type":"illegal_argument_exception","reason":"Invalid format: \"\""}},"status":400}.
+2018-04-12T13:09:11.405-0400	INFO	logger/log.go:24	Zap Logger Started
+2018-04-12T13:09:11.412-0400	INFO	event-forwarding/server.go:30	Starting workers
+2018-04-12T13:09:11.412-0400	INFO	event-forwarding/server.go:92	Done.
+2018-04-12T13:09:11.412-0400	INFO	event-forwarding/server.go:183	Setting up server...
+2018-04-12T13:09:11.412-0400	INFO	event-forwarding/server.go:209	Starting server...
+2018-04-12T13:09:13.338-0400	DEBUG	event-forwarding/server.go:145	Logging baseline from [::1]:58964
+2018-04-12T13:09:13.338-0400	DEBUG	event-forwarding/server.go:40	Parsing event
+2018-04-12T13:09:13.338-0400	DEBUG	event-forwarding/server.go:44	success, converting timestamp
+2018-04-12T13:09:13.338-0400	INFO	helpers/timestamp.go:40	Couldn't parse time: parsing time "2018-4-12T09:41:48-0600" as "2005-1-15T15:04:05-7000": cannot parse "18-4-12T09:41:48-0600" as "0"
+2018-04-12T13:09:13.338-0400	DEBUG	event-forwarding/server.go:47	New timestamp, %v
+2018-04-12T13:09:13.338-0400	DEBUG	event-forwarding/server.go:54	Done. Continuing forwarding.
+2018-04-12T13:09:13.624-0400	INFO	event-forwarding/server.go:84	[forwarder] Non-200 response recieved: 400. {"error":{"root_cause":[{"type":"mapper_parsing_exception","reason":"failed to parse [@timestamp]"}],"type":"mapper_parsing_exception","reason":"failed to parse [@timestamp]","caused_by":{"type":"illegal_argument_exception","reason":"Invalid format: \"\""}},"status":400}.
+2018-04-12T13:09:54.476-0400	INFO	logger/log.go:24	Zap Logger Started
+2018-04-12T13:09:54.483-0400	INFO	event-forwarding/server.go:30	Starting workers
+2018-04-12T13:09:54.483-0400	INFO	event-forwarding/server.go:92	Done.
+2018-04-12T13:09:54.483-0400	INFO	event-forwarding/server.go:183	Setting up server...
+2018-04-12T13:09:54.483-0400	INFO	event-forwarding/server.go:209	Starting server...
+2018-04-12T13:09:57.666-0400	DEBUG	event-forwarding/server.go:145	Logging baseline from [::1]:59322
+2018-04-12T13:09:57.666-0400	DEBUG	event-forwarding/server.go:40	Parsing event
+2018-04-12T13:09:57.666-0400	DEBUG	event-forwarding/server.go:44	success, converting timestamp
+2018-04-12T13:09:57.666-0400	INFO	helpers/timestamp.go:40	Couldn't parse time: parsing time "2018-4-12T09:41:48-0600" as "2006-1-15T15:04:05-7000": cannot parse "0600" as "-7000"
+2018-04-12T13:09:57.666-0400	DEBUG	event-forwarding/server.go:47	New timestamp, %v
+2018-04-12T13:09:57.666-0400	DEBUG	event-forwarding/server.go:54	Done. Continuing forwarding.
+2018-04-12T13:09:57.968-0400	INFO	event-forwarding/server.go:84	[forwarder] Non-200 response recieved: 400. {"error":{"root_cause":[{"type":"mapper_parsing_exception","reason":"failed to parse [@timestamp]"}],"type":"mapper_parsing_exception","reason":"failed to parse [@timestamp]","caused_by":{"type":"illegal_argument_exception","reason":"Invalid format: \"\""}},"status":400}.
+2018-04-12T13:10:29.130-0400	INFO	logger/log.go:24	Zap Logger Started
+2018-04-12T13:10:29.144-0400	INFO	event-forwarding/server.go:30	Starting workers
+2018-04-12T13:10:29.144-0400	INFO	event-forwarding/server.go:92	Done.
+2018-04-12T13:10:29.144-0400	INFO	event-forwarding/server.go:183	Setting up server...
+2018-04-12T13:10:29.144-0400	INFO	event-forwarding/server.go:209	Starting server...
+2018-04-12T13:10:30.536-0400	DEBUG	event-forwarding/server.go:145	Logging baseline from [::1]:59592
+2018-04-12T13:10:30.536-0400	DEBUG	event-forwarding/server.go:40	Parsing event
+2018-04-12T13:10:30.536-0400	DEBUG	event-forwarding/server.go:44	success, converting timestamp
+2018-04-12T13:10:30.536-0400	DEBUG	event-forwarding/server.go:47	New timestamp, %v2018-04-01T09:41:48-06:00
+2018-04-12T13:10:30.536-0400	DEBUG	event-forwarding/server.go:54	Done. Continuing forwarding.
+2018-04-12T13:10:30.835-0400	INFO	event-forwarding/server.go:86	[forwarder] good response: {"_index":"events","_type":"user","_id":"AWK61lJ0qIZBhtpg23gg","_version":1,"result":"created","_shards":{"total":2,"successful":2,"failed":0},"created":true}
+2018-04-12T13:10:47.310-0400	INFO	logger/log.go:24	Zap Logger Started
+2018-04-12T13:10:47.317-0400	INFO	event-forwarding/server.go:30	Starting workers
+2018-04-12T13:10:47.317-0400	INFO	event-forwarding/server.go:92	Done.
+2018-04-12T13:10:47.317-0400	INFO	event-forwarding/server.go:183	Setting up server...
+2018-04-12T13:10:47.317-0400	INFO	event-forwarding/server.go:209	Starting server...
+2018-04-12T13:10:49.104-0400	DEBUG	event-forwarding/server.go:145	Logging baseline from [::1]:59748
+2018-04-12T13:10:49.104-0400	DEBUG	event-forwarding/server.go:40	Parsing event
+2018-04-12T13:10:49.104-0400	DEBUG	event-forwarding/server.go:44	success, converting timestamp
+2018-04-12T13:10:49.104-0400	DEBUG	event-forwarding/server.go:47	New timestamp, 2018-04-01T09:41:48-06:00
+2018-04-12T13:10:49.104-0400	DEBUG	event-forwarding/server.go:54	Done. Continuing forwarding.
+2018-04-12T13:10:49.407-0400	INFO	event-forwarding/server.go:86	[forwarder] good response: {"_index":"events","_type":"user","_id":"AWK61psDqIZBhtpg23gl","_version":1,"result":"created","_shards":{"total":2,"successful":2,"failed":0},"created":true}
+2018-04-12T13:31:12.553-0400	INFO	logger/log.go:24	Zap Logger Started
+2018-04-12T13:31:12.563-0400	INFO	event-forwarding/server.go:30	Starting workers
+2018-04-12T13:31:12.563-0400	INFO	event-forwarding/server.go:92	Done.
+2018-04-12T13:31:12.563-0400	INFO	event-forwarding/server.go:183	Setting up server...
+2018-04-12T13:31:12.563-0400	INFO	event-forwarding/server.go:209	Starting server...
+2018-04-12T13:31:15.311-0400	DEBUG	event-forwarding/server.go:145	Logging baseline from [::1]:42688
+2018-04-12T13:31:15.311-0400	DEBUG	event-forwarding/server.go:40	Parsing event
+2018-04-12T13:31:15.311-0400	DEBUG	event-forwarding/server.go:44	success, converting timestamp
+2018-04-12T13:31:15.311-0400	DEBUG	event-forwarding/server.go:47	New timestamp, 2018-04-12T09:41:48-06:00
+2018-04-12T13:31:15.311-0400	DEBUG	event-forwarding/server.go:54	Done. Continuing forwarding.
+2018-04-12T13:31:15.590-0400	INFO	event-forwarding/server.go:86	[forwarder] good response: {"_index":"events","_type":"user","_id":"AWK66VDLqIZBhtpg23kS","_version":1,"result":"created","_shards":{"total":2,"successful":2,"failed":0},"created":true}
