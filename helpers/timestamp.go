@@ -35,7 +35,7 @@ func ConvertTimestamp(e CrestronEvent) CrestronEvent {
 
 	//parse the old timestamp
 	//2018-4-12T09:40:57-0600
-	t, err := time.Parse("2006-1-02T15:04:05-0700", e.Timestamp)
+	t, err := time.Parse("2006-1-2T15:04:05-0700", e.Timestamp)
 	if err != nil {
 		logger.L.Infof("Couldn't parse time: %v", err.Error())
 		//couldn't be parsed...

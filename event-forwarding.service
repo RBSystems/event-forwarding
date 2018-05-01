@@ -3,7 +3,6 @@ Description=A tool to forward events ELK
 After=network.target
 [Service]
 Type=simple
-#User=aveng
 ExecStart=/opt/event-forwarding/event-forwarding
 StandardOutput=journal
 StandardError=journal
